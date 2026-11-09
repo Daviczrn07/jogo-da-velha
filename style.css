@@ -1,0 +1,450 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(135deg, #14142b, #24245a);
+
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* TELAS */
+.tela {
+    width: 100%;
+
+    background-color: #1d1d3b;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    border: 2px solid #706cff;
+
+    box-shadow: 0 0 25px #706cff50;
+
+    text-align: center;
+}
+
+.escondido {
+    display: none;
+}
+
+/* TÍTULOS */
+h1 {
+    font-size: clamp(22px, 5vw, 30px);
+    color: #8b87ff;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(18px, 4vw, 24px);
+    margin: 25px 0 15px;
+}
+
+.subtitulo {
+    color: #c4c4e8;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+#mensagem {
+    font-size: clamp(15px, 3.5vw, 18px);
+    margin-bottom: 20px;
+    color: #c4c4ff;
+    min-height: 24px;
+}
+
+/* BOTÕES */
+button {
+    cursor: pointer;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    padding: 15px;
+
+    transition: 0.3s;
+
+    touch-action: manipulation;
+}
+
+button:hover {
+    transform: scale(1.04);
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+/* MENU */
+.botoes-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.medio {
+    background-color: #706cff;
+    color: white;
+}
+
+.dificil {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+.botoes-menu span {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+/* PLACAR */
+.placar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.pontuacao {
+    background-color: #292950;
+
+    padding: 12px 5px;
+
+    border-radius: 10px;
+
+    border: 1px solid #706cff;
+
+    min-width: 0;
+}
+
+.pontuacao span {
+    display: block;
+
+    font-size: clamp(10px, 2.5vw, 12px);
+
+    margin-bottom: 8px;
+}
+
+.pontuacao strong {
+    font-size: clamp(20px, 5vw, 25px);
+
+    color: #8b87ff;
+}
+
+/* TABULEIRO */
+.tabuleiro {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: clamp(5px, 2vw, 10px);
+
+    width: 100%;
+    max-width: 330px;
+
+    margin: 0 auto 25px;
+}
+
+/* CASAS */
+.celula {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    background-color: #292950;
+
+    border: 2px solid #706cff;
+
+    border-radius: 12px;
+
+    font-size: clamp(30px, 10vw, 50px);
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+}
+
+.celula:hover:not(:disabled) {
+    background-color: #38386b;
+}
+
+.celula.x {
+    color: #00d9ff;
+}
+
+.celula.o {
+    color: #ff4d6d;
+}
+
+/* BOTÕES DO JOGO */
+.botoes-jogo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.reiniciar {
+    background-color: #706cff;
+    color: white;
+}
+
+.voltar {
+    background-color: #292950;
+    color: white;
+
+    border: 1px solid #706cff;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        max-width: 450px;
+    }
+
+    .tela {
+        padding: 25px;
+    }
+
+    .tabuleiro {
+        max-width: 310px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .tela {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        margin: 20px 0 15px;
+    }
+
+    .placar {
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+
+    .pontuacao {
+        padding: 10px 3px;
+        border-radius: 8px;
+    }
+
+    .pontuacao span {
+        font-size: 10px;
+    }
+
+    .pontuacao strong {
+        font-size: 21px;
+    }
+
+    .tabuleiro {
+        max-width: 100%;
+        gap: 7px;
+        margin-bottom: 20px;
+    }
+
+    .celula {
+        font-size: clamp(32px, 12vw, 45px);
+        border-radius: 8px;
+        border-width: 2px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 350px) {
+
+    .tela {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    .pontuacao span {
+        font-size: 9px;
+    }
+
+    .pontuacao strong {
+        font-size: 18px;
+    }
+
+    .tabuleiro {
+        gap: 5px;
+    }
+
+    .celula {
+        font-size: 30px;
+        border-radius: 6px;
+    }
+}
+
+
+/* ESCOLHA DO SÍMBOLO */
+
+.escolha-simbolo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.simbolo {
+    background-color: #292950;
+    color: white;
+
+    border: 2px solid #706cff;
+
+    font-size: 35px;
+    padding: 15px;
+}
+
+.simbolo span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 8px;
+}
+
+.simbolo.selecionado {
+    background-color: #706cff;
+    border-color: #00d9ff;
+
+    box-shadow: 0 0 15px #706cff80;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 480px) {
+
+    .escolha-simbolo {
+        gap: 8px;
+    }
+
+    .simbolo {
+        font-size: 28px;
+        padding: 12px 8px;
+    }
+
+    .simbolo span {
+        font-size: 11px;
+    }
+
+}
+
+
+/* CELULAR NA HORIZONTAL */
+@media (max-height: 500px) and (orientation: landscape) {
+
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 650px;
+    }
+
+    .tela {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .subtitulo {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin: 12px 0;
+    }
+
+    #mensagem {
+        margin-bottom: 10px;
+    }
+
+    .tabuleiro {
+        max-width: 260px;
+        gap: 5px;
+        margin-bottom: 12px;
+    }
+
+    .celula {
+        font-size: 30px;
+    }
+
+    .placar {
+        margin-bottom: 12px;
+    }
+
+    .botoes-jogo {
+        gap: 8px;
+    }
+}

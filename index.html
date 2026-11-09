@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo da Velha - Contra IA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- MENU INICIAL -->
+       
+<section id="menu" class="tela">
+
+    <h1>JOGO DA VELHA</h1>
+
+    <p class="subtitulo">
+        Desafie a Inteligência Artificial!
+    </p>
+
+    <!-- ESCOLHA DO SÍMBOLO -->
+    <h2>Escolha com qual símbolo jogar</h2>
+
+    <div class="escolha-simbolo">
+
+        <button class="simbolo selecionado"
+                id="btnX"
+                onclick="selecionarSimbolo('X')">
+            X
+            <span>Começa primeiro</span>
+        </button>
+
+        <button class="simbolo"
+                id="btnO"
+                onclick="selecionarSimbolo('O')">
+            O
+            <span>IA começa primeiro</span>
+        </button>
+
+    </div>
+
+    <!-- ESCOLHA DA DIFICULDADE -->
+    <h2>Escolha a dificuldade</h2>
+
+    <div class="botoes-menu">
+
+        <button class="medio" onclick="iniciarJogo('medio')">
+            Médio
+            <span>IA estratégica</span>
+        </button>
+
+        <button class="dificil" onclick="iniciarJogo('dificil')">
+            Difícil
+            <span>IA quase imbatível</span>
+        </button>
+
+    </div>
+
+</section>
+
+        <!-- TELA DO JOGO -->
+        <section id="jogo" class="tela escondido">
+
+            <h1>JOGO DA VELHA</h1>
+
+            <p id="mensagem">Sua vez! Você é X.</p>
+
+            <!-- PLACAR -->
+            <div class="placar">
+
+                <div class="pontuacao">
+                    <span>Jogador (X)</span>
+                    <strong id="pontosJogador">0</strong>
+                </div>
+
+                <div class="pontuacao">
+                    <span>Empates</span>
+                    <strong id="pontosEmpate">0</strong>
+                </div>
+
+                <div class="pontuacao">
+                    <span>IA (O)</span>
+                    <strong id="pontosIA">0</strong>
+                </div>
+
+            </div>
+
+            <!-- TABULEIRO -->
+            <div id="tabuleiro" class="tabuleiro">
+
+                <button class="celula" data-index="0"></button>
+                <button class="celula" data-index="1"></button>
+                <button class="celula" data-index="2"></button>
+
+                <button class="celula" data-index="3"></button>
+                <button class="celula" data-index="4"></button>
+                <button class="celula" data-index="5"></button>
+
+                <button class="celula" data-index="6"></button>
+                <button class="celula" data-index="7"></button>
+                <button class="celula" data-index="8"></button>
+
+            </div>
+
+            <div class="botoes-jogo">
+
+                <button class="reiniciar" onclick="reiniciarPartida()">
+                    Jogar novamente
+                </button>
+
+                <button class="voltar" onclick="voltarMenu()">
+                    Voltar ao menu
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
